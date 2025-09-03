@@ -6,9 +6,13 @@ from email.mime.multipart import MIMEMultipart
 
 API_URL = "https://api-pro.ransomware.live/victims/recent?order=discovered"
 API_KEY = os.getenv("API_KEY")
-EMAIL_USER = os.getenv("EMAIL_USER")
-EMAIL_PASS = os.getenv("EMAIL_PASS")
-EMAIL_TO = os.getenv("EMAIL_TO")
+
+# Webland Email Settings
+EMAIL_SENDER = os.getenv("EMAIL_SCRIPT")
+EMAIL_PASSWORD = os.getenv("PW_SCRIPT")
+EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
+SMTP_SERVER = os.getenv("EMAIL_SERVER")
+SMTP_PORT = 465  # SSL
 
 def check_api():
     headers = {
@@ -36,17 +40,18 @@ def check_api():
             body += f"{key}: {value}\n"
         body += "\n" + "-"*40 + "\n"
 
-    # Send email
+    # Build email
     msg = MIMEMultipart()
-    msg["From"] = EMAIL_USER
-    msg["To"] = EMAIL_TO
+    msg["From"] = EMAIL_SENDER
+    msg["To"] = EMAIL_RECEIVER
     msg["Subject"] = "⚠️ Swiss Ransomware Victim Detected"
 
     msg.attach(MIMEText(body, "plain"))
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(EMAIL_USER, EMAIL_PASS)
-        server.sendmail(EMAIL_USER, EMAIL_TO, msg.as_string())
+    # Send email via Webland SMTP
+    with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
+        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())
 
     print("Email sent.")
 
