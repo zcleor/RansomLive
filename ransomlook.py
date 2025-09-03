@@ -26,7 +26,7 @@ def check_api():
 
     swiss_victims = [
         v for v in data.get("victims", [])
-        if v.get("country") in ["CH", "CHE"]
+        if v.get("country") in ["CH", "CHE", "US", "USA"]
     ]
 
     if not swiss_victims:
