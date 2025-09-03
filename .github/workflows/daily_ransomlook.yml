@@ -1,44 +1,31 @@
-name: Daily RansomLook Monitor
+name: Check Ransomware API
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Every day at 09:00 CET
-  workflow_dispatch:      # Allow manual trigger from GitHub UI
-
-permissions:
-  contents: write  # Required to push changes to the repo
+    - cron: "0 6 * * *"   # Runs every day at 06:00 UTC
+  workflow_dispatch:        # Allow manual run
 
 jobs:
-  run-script:
+  check:
     runs-on: ubuntu-latest
 
-    env:
-      EMAIL_SCRIPT: ${{ secrets.EMAIL_SCRIPT }}
-      PW_SCRIPT: ${{ secrets.PW_SCRIPT }}
-      EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
-      EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
-
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install requests
 
-      - name: Run ransomlook script
-        run: python ransomlook.py
-
-      - name: Commit and push filtered results
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add filtered_results.json
-          git diff --cached --quiet || git commit -m "Update filtered results [skip ci]"
-          git push
+      - name: Run API check
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          EMAIL_SCRIPT: ${{ secrets.EMAIL_SCRIPT }}
+          PW_SCRIPT: ${{ secrets.PW_SCRIPT }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+          EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
+        run: python check_api.py
