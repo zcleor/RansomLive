@@ -20,33 +20,45 @@ ALLOWED_COUNTRIES = {"CH", "CHE"}  # Länder-Filter
 
 # -------------------- Email Funktion --------------------
 def send_email(new_victims):
-    msg = MIMEMultipart("related")
+    msg = MIMEMultipart("alternative")
     msg["From"] = EMAIL_SENDER
     msg["To"] = EMAIL_RECEIVER
     msg["Subject"] = f"⚠️ {len(new_victims)} neue Ransomware-Einträge entdeckt"
 
-    # Alternative plain + HTML
-    msg_alternative = MIMEMultipart("alternative")
-    msg.attach(msg_alternative)
-
-    # Plain text
+    # Plain text version
     plain_body = ""
-    for victim in new_victims:
-        for key, value in victim.items():
-            plain_body += f"{key}: {value}\n"
-        plain_body += "\n" + "-"*40 + "\n"
-    msg_alternative.attach(MIMEText(plain_body, "plain"))
+    for v in new_victims:
+        plain_body += (
+            f"Discovered: {v.get('discovered', 'N/A')}\n"
+            f"Description: {v.get('description', 'N/A')}\n"
+            f"Website: {v.get('website', 'N/A')}\n"
+            f"Country: {v.get('country', 'N/A')}\n"
+            f"Permalink: {v.get('permalink', 'N/A')}\n"
+            f"Group: {v.get('group', 'N/A')}\n"
+            + "-"*40 + "\n"
+        )
+    msg.attach(MIMEText(plain_body, "plain"))
 
     # HTML version
     html_body = "<html><body>"
-    html_body += plain_body.replace("\n", "<br>")
+    for v in new_victims:
+        html_body += (
+            f"<b>Discovered:</b> {v.get('discovered', 'N/A')}<br>"
+            f"<b>Description:</b> {v.get('description', 'N/A')}<br>"
+            f"<b>Website:</b> {v.get('website', 'N/A')}<br>"
+            f"<b>Country:</b> {v.get('country', 'N/A')}<br>"
+            f"<b>Permalink:</b> <a href='{v.get('permalink', '#')}'>{v.get('permalink', '#')}</a><br>"
+            f"<b>Group:</b> {v.get('group', 'N/A')}<br>"
+            + "<hr>"
+        )
     html_body += "</body></html>"
-    msg_alternative.attach(MIMEText(html_body, "html"))
+    msg.attach(MIMEText(html_body, "html"))
 
+    # Send email
     try:
         with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-            server.send_message(msg)  # ✅ reliable
+            server.send_message(msg)
         print("✅ Email mit neuen Einträgen verschickt.")
     except Exception as e:
         print(f"❌ Fehler beim Emailversand: {e}")
