@@ -1,22 +1,4 @@
 {
   "victims": [
-    {
-      "discovered": "2025-09-01 15:42:14.393382",
-      "description": "Caprez Ingenieure AG provides structural, civil, bridge, water supply, sewage, snow-making, building maintenance, and special fields engineering services.",
-      "website": "www.caprez-ing.ch",
-      "post_url": "http://z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion/blog/?post_uuid=e4578944-4728-41d5-9088-116c9a6e75ff",
-      "country": "CH",
-      "activity": "Construction",
-      "duplicates": [],
-      "extrainfos": [],
-      "screenshot": "https://images.ransomware.live/victims/bc5a6c53c69c8553b037c0e0f0efb959.png",
-      "infostealer": "",
-      "press": null,
-      "id": "Q2FwcmV6IEluZ2VuaWV1cmUgQUdAZHJhZ29uZm9yY2U=",
-      "permalink": "https://www.ransomware.live/id/Q2FwcmV6IEluZ2VuaWV1cmUgQUdAZHJhZ29uZm9yY2U=",
-      "attackdate": "2025-09-01 14:57:47.648544",
-      "victim": "Caprez Ingenieure AG",
-      "group": "dragonforce"
-    }
   ]
 }
