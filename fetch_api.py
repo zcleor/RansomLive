@@ -16,29 +16,38 @@ EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 SMTP_SERVER = os.getenv("EMAIL_SERVER")
 SMTP_PORT = 465  # SSL
 
-ALLOWED_COUNTRIES = {"CH", "CHE", "IT"}  # Länder-Filter
+ALLOWED_COUNTRIES = {"CH", "CHE"}  # Länder-Filter
 
 # -------------------- Email Funktion --------------------
 def send_email(new_victims):
-    subject = f"⚠️ {len(new_victims)} neue Ransomware-Einträge entdeckt"
-    body = "Neue Opfer wurden entdeckt:\n\n"
-
-    for victim in new_victims:
-        for key, value in victim.items():
-            body += f"{key}: {value}\n"
-        body += "\n" + "-" * 40 + "\n"
-
-    msg = MIMEMultipart()
+    msg = MIMEMultipart("related")
     msg["From"] = EMAIL_SENDER
     msg["To"] = EMAIL_RECEIVER
-    msg["Subject"] = subject
-    msg.attach(MIMEText(body, "plain"))
+    msg["Subject"] = f"⚠️ {len(new_victims)} neue Ransomware-Einträge entdeckt"
+
+    # Alternative plain + HTML
+    msg_alternative = MIMEMultipart("alternative")
+    msg.attach(msg_alternative)
+
+    # Plain text
+    plain_body = ""
+    for victim in new_victims:
+        for key, value in victim.items():
+            plain_body += f"{key}: {value}\n"
+        plain_body += "\n" + "-"*40 + "\n"
+    msg_alternative.attach(MIMEText(plain_body, "plain"))
+
+    # HTML version
+    html_body = "<html><body>"
+    html_body += plain_body.replace("\n", "<br>")
+    html_body += "</body></html>"
+    msg_alternative.attach(MIMEText(html_body, "html"))
 
     try:
         with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-            server.send_message(msg)  # ✅ sicherer als sendmail
-        print("📧 Email mit neuen Einträgen verschickt.")
+            server.send_message(msg)  # ✅ reliable
+        print("✅ Email mit neuen Einträgen verschickt.")
     except Exception as e:
         print(f"❌ Fehler beim Emailversand: {e}")
 
