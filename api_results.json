@@ -1,3 +1,85 @@
 {
-  "victims": [  ]
+  "victims": [
+    {
+      "discovered": "2025-09-02 20:07:24.515339",
+      "description": "The DiMarco Group, LLC founded in 1910 and headquartered in Rochester, New York, operates as a full-service development company. The company's services include real estate development, construction management, property management, facilities maintenance, and construction equipment.",
+      "website": "www.dimarcogroup.com",
+      "post_url": "http://lynxblogmx3rbiwg3rpj4nds25hjsnrwkpxt5gaznetfikz4gz2csyad.onion/leaks/68b74502cc2d2d4e68e963b0",
+      "country": "IT",
+      "activity": "Construction",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "https://images.ransomware.live/victims/26e0175897527154deffb189a80d1960.png",
+      "infostealer": "",
+      "press": null,
+      "id": "d3d3LmRpbWFyY29ncm91cC5jb21AbHlueA==",
+      "permalink": "https://www.ransomware.live/id/d3d3LmRpbWFyY29ncm91cC5jb21AbHlueA==",
+      "attackdate": "2025-09-02 19:26:58.448000",
+      "victim": "www.dimarcogroup.com",
+      "group": "lynx"
+    },
+    {
+      "discovered": "2025-09-02 13:19:58.750701",
+      "description": "[AI generated] N/A",
+      "website": "",
+      "post_url": "http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/news/Cordeiro_Guerra___Associati",
+      "country": "IT",
+      "activity": "Not Found",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "https://images.ransomware.live/victims/82e90d3e2f218b8d29545e22b42619b8.png",
+      "infostealer": "",
+      "press": null,
+      "id": "Q29yZGVpcm8gR3VlcnJhICYgQXNzb2NpYXRpQGV2ZXJlc3Q=",
+      "permalink": "https://www.ransomware.live/id/Q29yZGVpcm8gR3VlcnJhICYgQXNzb2NpYXRpQGV2ZXJlc3Q=",
+      "attackdate": "2025-08-31 00:00:00.000000",
+      "victim": "Cordeiro Guerra & Associati",
+      "group": "everest"
+    },
+    {
+      "discovered": "2025-09-01 15:42:14.393382",
+      "description": "Caprez Ingenieure AG provides structural, civil, bridge, water supply, sewage, snow-making, building maintenance, and special fields engineering services.",
+      "website": "www.caprez-ing.ch",
+      "post_url": "http://z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion/blog/?post_uuid=e4578944-4728-41d5-9088-116c9a6e75ff",
+      "country": "CH",
+      "activity": "Construction",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "https://images.ransomware.live/victims/bc5a6c53c69c8553b037c0e0f0efb959.png",
+      "infostealer": "",
+      "press": null,
+      "id": "Q2FwcmV6IEluZ2VuaWV1cmUgQUdAZHJhZ29uZm9yY2U=",
+      "permalink": "https://www.ransomware.live/id/Q2FwcmV6IEluZ2VuaWV1cmUgQUdAZHJhZ29uZm9yY2U=",
+      "attackdate": "2025-09-01 14:57:47.648544",
+      "victim": "Caprez Ingenieure AG",
+      "group": "dragonforce"
+    },
+    {
+      "discovered": "2025-08-29 21:35:48.967380",
+      "description": "Zanetti S.r.l., headquartered in Florence, Italy, is a leading architectural company specializing in the design and construction of glass and …",
+      "website": "zanettisrl.it",
+      "post_url": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion/blog/post/zanettisrlit/",
+      "country": "IT",
+      "activity": "Not Found",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "https://images.ransomware.live/victims/9da498767e3a91358b635cd2325017e3.png",
+      "infostealer": {
+        "update": "2025-08-29 21:35:17",
+        "employees": 0,
+        "users": 0,
+        "thirdparties_domain": 0,
+        "employees_url": 0,
+        "users_url": 0,
+        "thirdparties": 0,
+        "infostealer_stats": {}
+      },
+      "press": null,
+      "id": "emFuZXR0aXNybC5pdEBzYWZlcGF5",
+      "permalink": "https://www.ransomware.live/id/emFuZXR0aXNybC5pdEBzYWZlcGF5",
+      "attackdate": "2025-08-29 21:35:34.556630",
+      "victim": "zanettisrl.it",
+      "group": "safepay"
+    }
+  ]
 }
