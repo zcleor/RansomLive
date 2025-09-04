@@ -15,9 +15,11 @@ EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 SMTP_SERVER = os.getenv("EMAIL_SERVER")
 SMTP_PORT = 465  # SSL
 
+# Länder-Filter
+ALLOWED_COUNTRIES = {"CH", "CHE", "IT"}
+
 
 def send_email(new_victims):
-    """Send email with info about new victims"""
     subject = f"⚠️ {len(new_victims)} neue Ransomware-Einträge entdeckt"
     body = "Neue Opfer wurden entdeckt:\n\n"
 
@@ -51,31 +53,36 @@ def fetch_data():
     response.raise_for_status()
     data = response.json()
 
-    new_victims = data.get("victims", [])
+    # Filter nur auf Opfer mit passendem "country"
+    all_victims = [
+        v for v in data.get("victims", [])
+        if v.get("country") in ALLOWED_COUNTRIES
+    ]
 
-    # Alte Daten laden
+    # Alte Daten laden (robust)
+    existing_victims = []
     if os.path.exists(FILENAME):
-        with open(FILENAME, "r", encoding="utf-8") as f:
-            existing_data = json.load(f)
-            existing_victims = existing_data.get("victims", [])
-    else:
-        existing_data = {"victims": []}
-        existing_victims = []
+        try:
+            with open(FILENAME, "r", encoding="utf-8") as f:
+                content = f.read().strip()
+                if content:
+                    existing_data = json.loads(content)
+                    existing_victims = existing_data.get("victims", [])
+        except (json.JSONDecodeError, FileNotFoundError) as e:
+            print(f"⚠️ Konnte alte Datei nicht laden ({e}), starte neu.")
 
     existing_ids = {v.get("id") for v in existing_victims}
 
-    # Neue Opfer herausfiltern
-    unique_new_victims = [v for v in new_victims if v.get("id") not in existing_ids]
+    # Nur neue Opfer herausfiltern
+    unique_new_victims = [v for v in all_victims if v.get("id") not in existing_ids]
 
     if unique_new_victims:
         print(f"✅ {len(unique_new_victims)} neue Einträge gefunden")
-        all_victims = existing_victims + unique_new_victims
-        updated_data = {"victims": all_victims}
+        updated_data = {"victims": existing_victims + unique_new_victims}
 
         with open(FILENAME, "w", encoding="utf-8") as f:
             json.dump(updated_data, f, indent=2, ensure_ascii=False)
 
-        # Email nur senden, wenn neue Opfer gefunden wurden
         send_email(unique_new_victims)
     else:
         print("ℹ️ Keine neuen Einträge gefunden.")
