@@ -36,8 +36,8 @@ def send_email(new_victims):
 
     try:
         with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
-            server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-            server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())
+        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        server.send_message(msg)   # statt sendmail(...)
         print("📧 Email mit neuen Einträgen verschickt.")
     except Exception as e:
         print(f"❌ Fehler beim Emailversand: {e}")
