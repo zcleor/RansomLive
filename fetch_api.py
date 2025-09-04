@@ -34,14 +34,13 @@ def send_email(new_victims):
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
 
-    try:
-        with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
+   try:
+    with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
         server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-        server.send_message(msg)   # statt sendmail(...)
-        print("📧 Email mit neuen Einträgen verschickt.")
-    except Exception as e:
-        print(f"❌ Fehler beim Emailversand: {e}")
-
+        server.send_message(msg)
+    print("📧 Email mit neuen Einträgen verschickt.")
+except Exception as e:
+    print(f"❌ Fehler beim Emailversand: {e}")
 
 def fetch_data():
     headers = {
