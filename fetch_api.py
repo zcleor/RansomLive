@@ -16,7 +16,7 @@ SMTP_SERVER = os.getenv("EMAIL_SERVER")
 SMTP_PORT = 465  # SSL
 
 # Länder-Filter
-ALLOWED_COUNTRIES = {"CH", "CHE", "IT"}
+ALLOWED_COUNTRIES = {"CH", "CHE"}
 
 
 def send_email(new_victims):
