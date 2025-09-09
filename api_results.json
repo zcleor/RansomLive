@@ -17,6 +17,62 @@
       "attackdate": "2025-09-01 14:57:47.648544",
       "victim": "Caprez Ingenieure AG",
       "group": "dragonforce"
+    },
+    {
+      "discovered": "2025-09-08 13:39:32.274616",
+      "description": "VARDECO SA specializes in high precision bar turning and screw ma\nchining, offering services for small, medium, and large custom se\nries.\n\nWe are going to upload 42 GB of corporate data. Employee personal\nfiles (passports, driver licenses, SSNs), project files, financi\nal data, drawings and specifications, customer information, NDAs,\netc.\n",
+      "website": "vardeco.com",
+      "post_url": "",
+      "country": "CH",
+      "activity": "Not Found",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "",
+      "infostealer": {
+        "update": "2025-09-08 22:10:01",
+        "employees": 0,
+        "users": 2,
+        "thirdparties_domain": 0,
+        "employees_url": 0,
+        "users_url": 1,
+        "thirdparties": 0,
+        "infostealer_stats": {
+          "RedLine": 2
+        }
+      },
+      "press": null,
+      "id": "VmFyZGVjb0Bha2lyYQ==",
+      "permalink": "https://www.ransomware.live/id/VmFyZGVjb0Bha2lyYQ==",
+      "attackdate": "2025-09-08 00:00:00.000000",
+      "victim": "Vardeco",
+      "group": "akira"
+    },
+    {
+      "discovered": "2025-09-08 13:13:14.693716",
+      "description": "Keller Laser AG – Expertise in sheet metal processing since 1995.\nKeller Laser AG is an owner-managed Swiss company and is now one\nof the leading suppliers in industrial sheet metal processing.\n\nWe are going to upload 9 GB of data. Almost all files are drawing\ns. So, if you are interested, welcome.\n",
+      "website": "kellerlaser.ch",
+      "post_url": "",
+      "country": "CH",
+      "activity": "Technology",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "",
+      "infostealer": {
+        "update": "2025-09-08 22:10:28",
+        "employees": 0,
+        "users": 0,
+        "thirdparties_domain": 0,
+        "employees_url": 0,
+        "users_url": 0,
+        "thirdparties": 0,
+        "infostealer_stats": {}
+      },
+      "press": null,
+      "id": "S2VsbGVyIExhc2VyIEFHQGFraXJh",
+      "permalink": "https://www.ransomware.live/id/S2VsbGVyIExhc2VyIEFHQGFraXJh",
+      "attackdate": "2025-09-08 00:00:00.000000",
+      "victim": "Keller Laser AG",
+      "group": "akira"
     }
   ]
 }
