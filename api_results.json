@@ -100,6 +100,47 @@
       "attackdate": "2025-09-09 11:22:53.786267",
       "victim": "noblecorp.net",
       "group": "yurei"
+    },
+    {
+      "discovered": "2025-09-15 20:44:32.683269",
+      "description": "CEVA Logistics is a global asset-light supply chain management company. It designs and implements freight forwarding, contract logistics, transport...",
+      "website": "cevalogistics.com",
+      "post_url": "http://fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion/companies/cevalogistics",
+      "country": "CH",
+      "activity": "Transportation/Logistics",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "https://images.ransomware.live/victims/34729f83abe2214a2786c6b84c7232a8.png",
+      "infostealer": {
+        "update": "2025-09-15 20:44:01",
+        "employees": 287,
+        "users": 1071,
+        "thirdparties_domain": 199,
+        "employees_url": 56,
+        "users_url": 100,
+        "thirdparties": 304,
+        "infostealer_stats": {
+          "RedLine": 814,
+          "Lumma": 644,
+          "Generic Stealer": 172,
+          "Raccoon": 302,
+          "StealC": 140,
+          "Vidar": 93,
+          "Azorult": 18,
+          "UNKNOWN": 16,
+          "Mystic": 8,
+          "DarkCrystal": 4,
+          "Predator": 4,
+          "CRYPTBOT": 2,
+          "Atomic": 3
+        }
+      },
+      "press": null,
+      "id": "Q2V2YSBMb2dpc3RpY3NAY29pbmJhc2VjYXJ0ZWw=",
+      "permalink": "https://www.ransomware.live/id/Q2V2YSBMb2dpc3RpY3NAY29pbmJhc2VjYXJ0ZWw=",
+      "attackdate": "2025-09-15 20:44:16.492280",
+      "victim": "Ceva Logistics",
+      "group": "coinbasecartel"
     }
   ]
 }
