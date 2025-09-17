@@ -141,6 +141,24 @@
       "attackdate": "2025-09-15 20:44:16.492280",
       "victim": "Ceva Logistics",
       "group": "coinbasecartel"
+    },
+    {
+      "discovered": "2025-09-16 07:08:21.797186",
+      "description": "F1-Generation\nF1-Generation GmbH is a distributor of internationally renowned fashion brands in the European market, managing over 10 labels. Its product portfolio includes designer lingerie, loungewear, swimwear, hosiery, shapewear, and fashion accessories. The company provides support in marketing and PR, IT improvements through in-house software development, and efficient brand management. Additionally, F1-Generation organizes and conducts trade fairs and order days for its clients.Geo: Germany - Leak size: 520 GB Archive - Contains: Files, SQL",
+      "website": "",
+      "post_url": "",
+      "country": "CH",
+      "activity": "Not Found",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "",
+      "infostealer": "",
+      "press": null,
+      "id": "RjEtR2VuZXJhdGlvbkBzYXJjb21h",
+      "permalink": "https://www.ransomware.live/id/RjEtR2VuZXJhdGlvbkBzYXJjb21h",
+      "attackdate": "2025-09-16 07:08:19.908891",
+      "victim": "F1-Generation",
+      "group": "sarcoma"
     }
   ]
 }
