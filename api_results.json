@@ -159,6 +159,33 @@
       "attackdate": "2025-09-16 07:08:19.908891",
       "victim": "F1-Generation",
       "group": "sarcoma"
+    },
+    {
+      "discovered": "2025-09-23 04:20:58.511493",
+      "description": "Real estate agency with extensive experience in construction, finance, and sales. Offers expertise in home construction and the financing process to guide buyers and sellers, available.- Database- Financial documents- Personal information of employees and clients https://edrorealestate.com/",
+      "website": "edrorealestate.com",
+      "post_url": "http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/87/edro-real-estate",
+      "country": "CH",
+      "activity": "Not Found",
+      "duplicates": [],
+      "extrainfos": [],
+      "screenshot": "https://images.ransomware.live/victims/1d647301c4c94cd43d92eccaa9fd5934.png",
+      "infostealer": {
+        "update": "2025-09-23 04:20:18",
+        "employees": 0,
+        "users": 0,
+        "thirdparties_domain": 0,
+        "employees_url": 0,
+        "users_url": 0,
+        "thirdparties": 0,
+        "infostealer_stats": {}
+      },
+      "press": null,
+      "id": "RWRybyBSZWFsIEVzdGF0ZUBzcGFjZWJlYXJz",
+      "permalink": "https://www.ransomware.live/id/RWRybyBSZWFsIEVzdGF0ZUBzcGFjZWJlYXJz",
+      "attackdate": "2025-09-22 00:00:00.000000",
+      "victim": "Edro Real Estate",
+      "group": "spacebears"
     }
   ]
 }
